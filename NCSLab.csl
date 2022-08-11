@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0" demote-non-dropping-particle="sort-only">
   <info>
-    <title>NCSLab</title>
+    <title>NCSLab2</title>
     <id>http://www</id>
     <author>
       <name>宇強 國郡</name>
@@ -10,11 +10,15 @@
     <contributor>
       <name>宇強 國郡</name>
     </contributor>
+    <contributor>
+      <name>Yen-Cheng Chu</name>
+      <email>r10921008@g.ntu.edu.tw</email>
+    </contributor>
     <category citation-format="numeric"/>
     <category field="engineering"/>
     <category field="generic-base"/>
     <summary>NCSLab style</summary>
-    <updated>2020-11-15T03:21:46+00:00</updated>
+    <updated>2020-08-11T18:05:00+08:00</updated>
     <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
   </info>
   <locale xml:lang="en">
@@ -256,8 +260,12 @@
       <key variable="citation-number"/>
     </sort>
     <layout delimiter=", ">
-      <group prefix="[" suffix="]" delimiter=", ">
+      <group prefix="[" suffix="]" delimiter="">
         <text variable="citation-number"/>
+        <text macro="authorfirst" prefix=": "/>
+        <date variable="issued">
+          <date-part name="year" prefix=" "/>
+        </date>
         <text macro="citation-locator"/>
       </group>
     </layout>
@@ -268,20 +276,17 @@
 
     <layout suffix=".">
       <!-- Citation Number -->
-      <group  >
-        <text display="left-margin" variable="citation-number" prefix="[" />
+      <group prefix="[" suffix="]&#10;" delimiter="">
+        <text display="left-margin" variable="citation-number"/>
         <text macro="authorfirst" prefix=": "/>
-        <date variable="issued" suffix="]">
+        <date variable="issued">
           <date-part name="year" prefix=" "/>
         </date>
-        <!--text value="&#10;"/-->
       </group>
-      <!-- Author(s) -->
       <group>
-
+        <!-- Author(s) -->
         <text macro="author" suffix=", "/>
 
-        <!-- <group> -->
         <!-- Rest of Citation -->
         <choose >
           <!-- Specific Formats -->
